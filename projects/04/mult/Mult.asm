@@ -9,4 +9,36 @@
 // This program only needs to handle arguments that satisfy
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
-// Put your code here.
+// Initialize
+@R0
+D=M
+@n
+M=D   // n=R0
+@R1
+D=M
+@mult
+M=D   // mult=R1
+@prod
+M=0   // prod=0
+
+// Execute
+(LOOP)
+  @mult
+  D=M
+  @STOP
+  D;JEQ   // if mult=0 exit LOOP
+  @n
+  D=M
+  @prod
+  M=M+D   // prod=prod+n
+  @mult
+  M=M-1   // mult=mult-1
+  @LOOP
+  0;JMP
+(STOP)
+  @prod
+  D=M
+  @R2
+  M=D     // R2=prod
+  @STOP
+  0;JMP

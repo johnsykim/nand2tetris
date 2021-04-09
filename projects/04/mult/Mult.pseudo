@@ -1,0 +1,15 @@
+// Mult.pseudo
+
+// Initialize
+n=R0
+mult=R1
+prod=0
+
+// Execute
+LOOP:
+  if mult=0 goto STOP
+  prod=prod+n
+  mult=mult-1
+  goto LOOP
+STOP:
+  R2=prod
