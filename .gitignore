@@ -3,3 +3,6 @@ tools/
 *.cmp
 *.tst
 *.out
+*.hack
+*.ipynb*
+*.pyc
