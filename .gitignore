@@ -6,3 +6,9 @@ tools/
 *.hack
 *.ipynb*
 *.pyc
+*.html
+*.iml
+*.pdf
+*.xml
+*.gif
+*.txt
